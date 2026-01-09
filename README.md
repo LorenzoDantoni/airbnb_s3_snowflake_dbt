@@ -1,12 +1,12 @@
-# 🏠 Airbnb End-to-End Data Engineering Project
+# Airbnb End-to-End Data Engineering Project
 
-## 📋 Overview
+## Overview
 
 This project implements a complete end-to-end data engineering pipeline for Airbnb data using modern cloud technologies. The solution demonstrates best practices in data warehousing, transformation, and analytics using **Snowflake**, **dbt (Data Build Tool)**, and **AWS**.
 
 The pipeline processes Airbnb listings, bookings, and hosts data through a medallion architecture (Bronze → Silver → Gold), implementing incremental loading, slowly changing dimensions (SCD Type 2), and creating analytics-ready datasets.
 
-## 🏗️ Architecture
+## Architecture
 
 ### Data Flow
 ```
@@ -29,23 +29,23 @@ Source Data (CSV) → AWS S3 → Snowflake (Staging) → Bronze Layer → Silver
   - Jinja templating
   - Testing and documentation
 
-## 📊 Data Model
+## Data Model
 
 ### Medallion Architecture
 
-#### 🥉 Bronze Layer (Raw Data)
+#### Bronze Layer (Raw Data)
 Raw data ingested from staging with minimal transformations:
 - `bronze_bookings` - Raw booking transactions
 - `bronze_hosts` - Raw host information
 - `bronze_listings` - Raw property listings
 
-#### 🥈 Silver Layer (Cleaned Data)
+#### Silver Layer (Cleaned Data)
 Cleaned and standardized data:
 - `silver_bookings` - Validated booking records
 - `silver_hosts` - Enhanced host profiles with quality metrics
 - `silver_listings` - Standardized listing information with price categorization
 
-#### 🥇 Gold Layer (Analytics-Ready)
+#### Gold Layer (Analytics-Ready)
 Business-ready datasets optimized for analytics:
 - `obt` (One Big Table) - Denormalized fact table joining bookings, listings, and hosts
 - `fact` - Fact table for dimensional modeling
@@ -58,7 +58,7 @@ Slowly Changing Dimensions to track historical changes:
 - `dim_listings` - Historical listing changes
 
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -158,7 +158,7 @@ Slowly Changing Dimensions to track historical changes:
    dbt build  # Runs models, tests, and snapshots
    ```
 
-## 🎯 Key Features
+## Key Features
 
 ### 1. Incremental Loading
 Bronze and silver models use incremental materialization to process only new/changed data:
@@ -194,7 +194,7 @@ Automatic schema separation by layer:
 - Silver models → `AIRBNB.SILVER.*`
 - Gold models → `AIRBNB.GOLD.*`
 
-## 📊 Future Enhancements
+## Future Enhancements
 
 - [ ] Add data quality dashboards
 - [ ] Implement CI/CD pipeline
