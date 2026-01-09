@@ -1,0 +1,6 @@
+{
+    "dbt.profilesDir": "${workspaceFolder}/airbnb_project",
+    "python.defaultInterpreterPath": "/home/lorenzo/miniconda3/envs/data-eng/bin/python",
+    "dbt.perspectiveTheme": "Pro Dark",
+    "dbt.enableNewLineagePanel": true
+}
